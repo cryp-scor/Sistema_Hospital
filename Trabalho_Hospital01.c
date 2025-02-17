@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Função para exibir o menu principal e obter a escolha do usuário
+// menu principal e obter a escolha do usuário
 int exibirMenuPrincipal() {
     int escolha;
     printf("\nMenu Principal:\n");
@@ -15,10 +15,10 @@ int exibirMenuPrincipal() {
     return escolha;
 }
 
-// Função para exibir o submenu de Médico
+// exibir o submenu de Médico
 void submenuMedico() {
     int escolha;
-    while (1) { // Loop para permitir que o usuário faça várias operações no submenu
+    while (1) { // operações no submenu
         printf("\nSubmenu Medico:\n");
         printf("1 - Identificador\n");
         printf("2 - Nome\n");
@@ -29,25 +29,25 @@ void submenuMedico() {
 
         if (escolha == 1) {
             printf("Identificador\n");
-            // Aqui você pode adicionar o código para incluir um médico
+            // incluir um médico
         } else if (escolha == 2) {
             printf("Nome:\n");
         } else if (escolha == 3) {
             printf("Especialidade:\n");
-            // Aqui você pode adicionar o código para alterar um médico
+            // alterar um médico
         } else if (escolha == 4) {
             printf("Voltando ao Menu Principal...\n");
-            break; // Sai do loop e retorna ao menu principal
+            break; // sai do loop e retorna ao menu principal
         } else {
             printf("Opcao invalida!\n");
         }
     }
 }
 
-// Função para exibir o submenu de Paciente
+// exibir o submenu de Paciente
 void submenuPaciente() {
     int escolha;
-    while (1) { // Loop para permitir que o usuário faça várias operações no submenu
+    while (1) { // operações no submenu
         printf("\nSubmenu Paciente:\n");
         printf("1 - Nome\n");
         printf("2 - Identidade\n");
@@ -60,7 +60,7 @@ void submenuPaciente() {
 
         if (escolha == 1) {
             printf("Nome:\n");
-            // Aqui você pode adicionar o código para incluir um paciente
+            // adicionar o código para incluir um paciente
         } else if (escolha == 2) {
             printf("Identidade:\n");
         } else if (escolha == 3) {
@@ -69,20 +69,20 @@ void submenuPaciente() {
             printf("Telefone:\n");
         } else if (escolha == 5) {
             printf("Sexo:\n");
-            // Aqui você pode adicionar o código para alterar um paciente
+            // código para alterar um paciente
         } else if (escolha == 6) {
             printf("Voltando ao Menu Principal...\n");
-            break; // Sai do loop e retorna ao menu principal
+            break; 
         } else {
             printf("Opcao invalida!\n");
         }
     }
 }
 
-// Função para exibir o submenu de Consulta
+// submenu de consulta
 void submenuConsulta() {
     int escolha;
-    while (1) { // Loop para permitir que o usuário faça várias operações no submenu
+    while (1) { // operações no submenu
         printf("\nSubmenu Consulta:\n");
         printf("1 - Numero\n");
         printf("2 - Medico (identificador)\n");
@@ -96,7 +96,7 @@ void submenuConsulta() {
 
         if (escolha == 1) {
             printf("Numero:\n");
-            // Aqui você pode adicionar o código para incluir uma consulta
+            // incluir uma consulta
         } else if (escolha == 2) {
             printf("Medico (identificador):\n");
         } else if (escolha == 3) {
@@ -107,20 +107,20 @@ void submenuConsulta() {
             printf("Duracao:\n");
         } else if (escolha == 6) {
             printf("Data:\n");
-            // Aqui você pode adicionar o código para alterar uma consulta
+            // alterar uma consulta
         } else if (escolha == 7) {
             printf("Voltando ao Menu Principal...\n");
-            break; // Sai do loop e retorna ao menu principal
+            break; 
         } else {
             printf("Opcao invalida!\n");
         }
     }
 }
 
-// Função para exibir o submenu de Relatórios
+// submenu de Relatórios
 void submenuRelatorios() {
     int escolha;
-    while (1) { // Loop para permitir que o usuário faça várias operações no submenu
+    while (1) { // operações no submenu
         printf("\nSubmenu Relatorios:\n");
         printf("1 - Lista de consultas agendadas para o paciente\n");
         printf("2 - Lista de consultas agendadas para o medico\n");
@@ -132,29 +132,24 @@ void submenuRelatorios() {
         switch (escolha) {
             case 1:
                 printf("\nLista de consultas agendadas para o paciente:\n");
-                // Aqui você pode adicionar o código para gerar a lista de consultas do paciente
-                // Exemplo: solicitar o identificador do paciente e exibir suas consultas
+                // solicitar o identificador do paciente e exibir suas consultas
                 break;
             case 2:
                 printf("\nLista de consultas agendadas para o medico:\n");
-                // Aqui você pode adicionar o código para gerar a lista de consultas do médico
-                // Exemplo: solicitar o identificador do médico e exibir suas consultas
                 break;
             case 3:
                 printf("\nLista de pacientes por especialidade:\n");
-                // Aqui você pode adicionar o código para gerar a lista de pacientes por especialidade
-                // Exemplo: solicitar a especialidade e exibir os pacientes associados
                 break;
             case 4:
                 printf("Voltando ao Menu Principal...\n");
-                return; // Sai da função e retorna ao menu principal
+                return;
             default:
                 printf("Opcao invalida! Tente novamente.\n");
         }
     }
 }
 
-// Função para processar a escolha do usuário no menu principal
+// escolha do usuário no menu principal
 void processarEscolha(int escolha) {
     switch (escolha) {
         case 1:
@@ -175,7 +170,7 @@ void processarEscolha(int escolha) {
             break;
         case 5:
             printf("Saindo...\n");
-            exit(0); // Encerra o programa
+            exit(0); // encerrar
         default:
             printf("Opcao invalida! Tente novamente.\n");
     }
@@ -184,7 +179,7 @@ void processarEscolha(int escolha) {
 int main() {
     int escolha;
 
-    while (1) { // Loop infinito até que o usuário escolha sair
+    while (1) { // loop infinito até que o usuário escolha sair
         escolha = exibirMenuPrincipal();
         processarEscolha(escolha);
     }
